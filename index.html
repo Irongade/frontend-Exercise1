@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Game Quiz</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="root">
+            <div class="main">
+                <div class="homePage" id="home"  style="display: flex;">
+                    <h2>
+                        How good is your Frontend knowledge?
+                    </h2>
+                    <button class="homeBtn" onclick="beginQuiz()"> 
+                        <span>
+                            Start Quiz 
+                        </span>
+                    </button>
+                </div>
+                <div class="quizPage" id="quiz"  style="display: none;">
+                    <div class="top-wrapper">
+                        <div class="counter">
+                            <p class="small">Question</p> 
+                            <p id="count"> 1 of 5</p>
+                        </div>
+                        <div class="points"> 
+                            <p class="small"> Your score: </p>
+                            <p id="yourScore"> 0 </p>
+                        </div>
+                    </div>
+                    <div class="question" >
+                        <p id="currentQuestion">The question goes here</p>
+                    </div>
+                    <hr class="line">
+                    <div 
+                    onclick="getAnswer(`a`,0)"
+                    onmouseover="onMouseOver(8)"
+                    onmouseout="onMouseOut(8)"
+                    class="options" id="options-hover">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                        <input class="optionsInput" id="option1" type="text" placeholder="the Options goes here" disabled>
+                    </div>
+                    <div 
+                    onclick="getAnswer(`b`,1)"
+                    onmouseover="onMouseOver(11)"
+                    onmouseout="onMouseOut(11)"
+                    class="options" id="options-hover">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                        <input class="optionsInput" id="option2" type="text" placeholder="the Options goes here" disabled>
+                    </div>
+                    <div 
+                    onclick="getAnswer(`c`,2)"
+                    onmouseover="onMouseOver(14)"
+                    onmouseout="onMouseOut(14)"
+                    class="options" id="options-hover">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                        <input class="optionsInput" id="option3" type="text" placeholder="the Options goes here" disabled>
+                    </div>
+                    <div 
+                    onclick="getAnswer(`d`,3)"
+                    onmouseover="onMouseOver(17)"
+                    onmouseout="onMouseOut(17)"
+                    class="options" id="options-hover">
+                        <div class="left"></div>
+                        <div class="right"></div>
+                        <input class="optionsInput" id="option4" type="text" placeholder="the Options goes here" disabled>
+                    </div>
+                    <div class="next">
+                        <button  onclick="setQuestion()"> Next </button>
+                    </div>
+                </div>
+                <div class="endPage" id="end" style="display: none;">
+                    <div class="scoreboard">
+                        <p> Your Final Score: </p>
+                        <h2 id = "finalScore" > 0 </h2>
+                    </div>
+                    <div class="exit">
+                        <button  onclick="playAgain()"> Try Again </button>
+                        <button id="btn" onclick="returnHome()"> Go Home </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>
